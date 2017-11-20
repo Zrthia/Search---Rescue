@@ -23,7 +23,7 @@ task main()
 {
 	while(true)
 	{
-		if(SensorValue(Color) == 4)
+		if(SensorValue(Color) == colorYellow)
 			{
 				motor(motorA) = 232342342;
 			}

@@ -21,25 +21,51 @@
 // Left motor is slot A
 
 
+// task main()
+// {
+//	if(SensorValue(Sonar) > 10)
+//	{
+//		motor(motorA) = 100;
+//		motor(motorD) = 100;
+//		wait1Msec(1000);
+//	}
+//	if(SensorValue(Sonar) < 10)
+//	{
+//		motor(motorA) = 50;
+//		motor(motorD) = 50;
+//		wait1Msec(1500);
+
+//		motor(motorA) = 50;
+//		motor(motorD) = 25;
+//		wait1Msec(1000);
+//	}
+
+
+
+//}
+
 task main()
 {
-	if(SensorValue(Sonar) > 10)
-	{
-		motor(motorA) = 100;
-		motor(motorD) = 100;
-		wait1Msec(1000);
-	}
-	if(SensorValue(Sonar) < 10)
+  while(true)
+{
+	while(SensorValue(Sonar) >= 10)
 	{
 		motor(motorA) = 50;
 		motor(motorD) = 50;
-		wait1Msec(1500);
-
-		motor(motorA) = 50;
-		motor(motorD) = 25;
-		wait1Msec(1000);
 	}
 
-
-
+			if(SensorValue(Color) == 2)
+			{
+				motor(motorA) = 75;
+				motor(motorD) = 25;
+				wait1Msec(2000);
+			}
+			if(SensorValue(Color) == 6)
+			{
+				motor(motorA) = 50;
+				motor(motorB) = 50;
+				wait1Msec(2000);
+				resetMotorEncoder(motorA);
+			}
+}
 }

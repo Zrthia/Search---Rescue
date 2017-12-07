@@ -66,14 +66,14 @@ task main()
 				motor(motorD) = -25;
 				wait1Msec(500);
 				}
-					if(SensorValue(Color) == 4 || 6)
+					if(SensorValue(Color) == 4)
 					{
 						motor(motorA) = 50;
 						motor(motorB) = 50;
 						wait1Msec(1000);
-						motor(motorA) = 50;
-						motor(motorD) = -50;
-						wait1Msec(750);
+						motor(motorA) = 25;
+						motor(motorD) = -25;
+						wait1Msec(550);
 					}
 
 						while(SensorValue(Sonar) >= 10)

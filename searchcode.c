@@ -81,7 +81,14 @@ task main()
 						motor(motorD) = 50;
 						wait1Msec(5000);
 					}
+						motor(motorA) = -40;
+						motor(motorD) = -40;
+						wait1Msec(750);
 
+
+						motor(motorA) = 80;
+						motor(motorD) = -80;
+						wait1Msec(350);
 						while(SensorValue(Sonar) <= 10)
 							{
 								motor(motorA) = 50;
@@ -100,11 +107,17 @@ task main()
 									motor(motorD) = -25;
 									wait1Msec(1000);
 								}
-									if(SensorValue(Color) == 4)
+									if(SensorValue(Color) == 4 || 6)
 									{
 										motor(motorA) = 50;
 										motor(motorB) = 50;
-										wait1Msec(2000);
+										wait1Msec(1000);
+										motor(motorA) = 80;
+										motor(motorD) = -80;
+										wait1Msec(350);
+										motor(motorA) = 50;
+										motor(motorD) = 50;
+										wait1Msec(5000);
 									}
 									motor(motorA) = -50;
 									motor(motorD) = -25;
@@ -128,13 +141,4 @@ task main()
 												motor(motorD) = 50;
 												wait1Msec(5000);
 										}
-
-
-
-
-
-
-
-
-
 }

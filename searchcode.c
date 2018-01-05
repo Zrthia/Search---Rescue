@@ -74,6 +74,9 @@ task main()
 						motor(motorA) = 50;
 						motor(motorB) = 50;
 						wait1Msec(1000);
+						motor(motorA) = 25;
+						motor(motorD) = -25;
+						wait1Msec(200);
 						motor(motorA) = 80;
 						motor(motorD) = -80;
 						wait1Msec(350);
@@ -112,6 +115,9 @@ task main()
 										motor(motorA) = 50;
 										motor(motorB) = 50;
 										wait1Msec(1000);
+										motor(motorA) = 25;
+										motor(motorD) = -25;
+										wait1Msec(200);
 										motor(motorA) = 80;
 										motor(motorD) = -80;
 										wait1Msec(350);
@@ -141,4 +147,5 @@ task main()
 												motor(motorD) = 50;
 												wait1Msec(5000);
 										}
+
 }

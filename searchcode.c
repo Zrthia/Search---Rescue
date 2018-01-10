@@ -36,83 +36,95 @@ task main()
 
 			if(SensorValue(Color) == 2)
 			{
-				motor(motorA) = 75;
-				motor(motorD) = 25;
-				wait1Msec(500);
+				resetMotorEncoder(motorA);
+				while(getMotorEncoder(motorA) <= 100)
+				{
+					motor(motorA) = 75;
+					motor(motorD) = 25;
+				}
 				motor(motorA) = 0;
 				motor(motorD) = 0;
-				wait1Msec(20);
-				motor(motorA) = -75;
-				motor(motorD) = -25;
-				wait1Msec(500);
+				wait1Msec(10);
+				resetMotorEncoder(motorA);
+				while(getMotorEncoder(motorA) <= -100)
+				{
+					motor(motorA) = -75;
+					motor(motorD) = -25;
+				}
+
+
 			}
 					if(SensorValue(Color) == 4 || 6)
 					{
 						resetMotorEncoder(motorA);
-						while(getMotorEncoder(motorA) <= 360)
+						while(getMotorEncoder(motorA) <= 365)
 						{
 							motor(motorA) = 100;
 							motor(motorD) = -100;
 						}
-						motor(motorA) = 50;
-						motor(motorD) = 50;
-						wait1Msec(5000);
+						motor(motorA) = 25;
+						motor(motorD) = 25;
+						wait1Msec(7000);
 					}
 						motor(motorA) = -40;
 						motor(motorD) = -40;
 						wait1Msec(750);
 
 						resetMotorEncoder(motorA);
-						while(getMotorEncoder(motorA) <= 350)
+						while(getMotorEncoder(motorA) <= 395)
 						{
 							motor(motorA) = 100;
 							motor(motorD) = -100;
 						}
 
-						while(SensorValue(Sonar) <= 10)
+						while(SensorValue(Sonar) >= 10)
 							{
 								motor(motorA) = 50;
 								motor(motorD) = 50;
+
 							}
 								motor(motorA) = 20;
 								motor(motorD) = 20;
 								wait1Msec(1000);
 
-							if(SensorValue(Color) == 2)
-								{
-									motor(motorA) = 75;
-									motor(motorD) = 25;
-									wait1Msec(500);
-									motor(motorA) = 0;
-									motor(motorD) = 0;
-									wait1Msec(20);
-									motor(motorA) = -75;
-									motor(motorD) = -25;
-									wait1Msec(500);
-								}
+
 								if(SensorValue(Color) == 4 || 6)
 								{
 									resetMotorEncoder(motorA);
-									while(getMotorEncoder(motorA) <= 360)
+									while(getMotorEncoder(motorA) <= 365)
 									{
 										motor(motorA) = 100;
 										motor(motorD) = -100;
 									}
-											motor(motorA) = 50;
-											motor(motorD) = 50;
-											wait1Msec(5000);
+											motor(motorA) = 25;
+											motor(motorD) = 25;
+											wait1Msec(7000);
 								}
-										resetMotorEncoder(motorA);
-										while(getMotorEncoder(motorA) <= 180)
+									motor(motorA) = -50;
+									motor(motorD) = -50;
+									wait1Msec(800);
+
+									resetMotorEncoder(motorA);
+									while(getMotorEncoder(motorA) <= 90)
 										{
 											motor(motorA) = -25;
 											motor(motorD) = 25;
 										}
-									if(SensorValue(Sonar) > 10)
-									{
-										motor(motorA) = 50;
-										motor(motorD) = 50;
-										wait1Msec(5000);
-									}
+											while(SensorValue(Sonar) >= 10)
+											{
+												motor(motorA) = 50;
+												motor(motorD) = 50;
+
+											}
+												motor(motorA) = 20;
+												motor(motorD) = 20;
+												wait1Msec(1000);
+
+											resetMotorEncoder(motorA);
+											while(getMotorEncoder(motorA) <= 360)
+											{
+												motor(motorA) = -25;
+												motor(motorD) = 25;
+											}
 
 }
